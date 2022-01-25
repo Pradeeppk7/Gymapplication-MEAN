@@ -3,7 +3,7 @@
 ### 2. Tech Stack:  MEAN Stack (MongoDB,Express.js,Angular,Node.js).
 ### 3. The user has to register and login to buy fitness packages , Admin user can do member management (CRUD).
 
-# TO RUN THE WEBAPPLICATION
+# TO RUN THE WEB APPLICATION
 
 ## Install node modules 
 
@@ -61,7 +61,8 @@ Only accessible by Admin
 ![image](https://user-images.githubusercontent.com/88220620/151026219-bee7870e-b024-42b0-ba4c-6f1be3741904.png)
 
 ## Contact Page
-![image](https://user-images.githubusercontent.com/88220620/151026477-b877110d-a92b-4d15-b49f-ae2c6cca0635.png)
+![image](https://user-images.githubusercontent.com/88220620/151026967-05c7987b-14b6-4355-b059-ba953bf46964.png)
+
 
 
 
