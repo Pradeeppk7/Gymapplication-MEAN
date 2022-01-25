@@ -1,0 +1,89 @@
+<div class="container" style="font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive; background-color: #c5c6c7; max-height:300vh; border-radius: 12px;">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button class="btn btn-info me-md-2" type="button" routerLink="" style="border:solid #1F2833; margin: 1vw;">Home
+        </button>
+        <button class="btn btn  me-md-2" style=" margin: 1vw; color: aqua; background-color:#1F2833 ;">
+            <h3>Profile</h3>
+        </button>
+        <button class="btn btn-info me-md-2" type="button" routerLink="/packages"
+            style="border:solid #1F2833; margin: 1vw;">Package
+        </button>
+       
+
+    </div>
+    <hr style="height: 2px; margin: 1%;padding: 0; ">
+    <div style="padding-bottom: 2vh;">
+        <div style="display: flex;   flex-flow: row wrap;">
+            <div class="card mb-3 shadow-lg"
+                style="width: 18rem; margin: 0vw 1vw 1vw 1vw; background-color: #c5c6c7; border-radius: 12px;">
+                <div style="background-color:rgb(255, 255, 255); margin: 1vh;  border-radius: 12px;">
+                    <img src="assets\user-solid.svg" class="card-img-top" style="padding: 40px; max-width: 40vh; "
+                        alt="...">
+                </div>
+                <div class="card-body " *ngIf="userdata">
+                    <h5 class="card-title">Name : {{userdata.Fname}} {{userdata.lname}}</h5>
+                    <hr>
+                    <p class="card-text">Age: {{userdata.userage}}<br>
+                        Gender: {{userdata.gender}} <br>
+                        Expertise level : {{userdata.level}}</p>
+
+                    <div class="d-grid gap-2 col-6 mx-auto" style="margin: 1vh;">
+                        <button class="btn btn-info" type="button" routerLink="/packages"
+                            style="border:solid #1F2833;">Buy
+                            Package</button>
+                    </div>
+                   
+
+                </div>
+                <div class="small"><a routerLink="/contact" style="color:  #1F2833; display: flex; justify-content: center; padding-bottom: 1vh;">Need Help?</a>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;" >
+                <div class="card " style="background-color: #c5c6c7; max-width: 120vh;  border-radius: 12px;">
+                    <div>
+                        <img src="assets\packageinfo.png" class="card-img-top"
+                            style="max-width: 115vh; border-radius: 12px; border: solid 8px rgb(255, 255, 255) ;"
+                            alt="loading">
+                    </div>
+                    <div class="card-body shadow-lg" style="background-color: #c5c6c7; border-radius: 12px;">
+                        <h4 class="card-title" *ngIf="userdata.pack">Package: {{userdata.pack}}-{{userdata.level}}</h4>  <h4 class="card-title" *ngIf="!userdata.pack">Package: 7days  Free Trial</h4>  
+                        <hr>
+                        <div *ngIf="userdata">
+                            <span>Adds on:</span>&nbsp; <span *ngIf="addbath()"><img src="assets\hot-tub-solid.svg" height="30vw"
+                                style="padding:0.5vh; border-radius: 2px; background-color:aqua;"></span> &nbsp;
+                        <span *ngIf="addtrain()"><img src="assets\hands-helping-solid.svg" height="30vw"
+                                style="padding:0.5vh; border-radius: 2px; background-color:greenyellow;"></span> &nbsp;
+                        <span *ngIf="adddiet()"><img src="assets\utensils-solid.svg" height="30vw"
+                                style="padding:0.5vh; border-radius: 2px; background-color:orange;"></span>
+                        <hr>
+                        <p class="card-text">Purchased on: {{userdata.date |slice :0:10 }} <br></p>
+                        </div>
+                        <p class="card-text"><small class="text-muted">Hustle Fitness</small></p>
+                    </div>
+                </div>
+
+
+
+                <div class="container-fluid"
+                    style="display: flex; flex-wrap: wrap; justify-content: center; background-color:  #c5c6c7; border-radius: 12px; padding: 0%; margin-top: 0.5vw; ">
+                    <iframe max-width="1vh" style="margin:0.1vh;  border-radius: 12px;"
+                        src="https://www.youtube.com/embed/vRe5BuefvX8" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe max-width="1vh" style="margin:0.1vh;  border-radius: 12px;"
+                        src="https://www.youtube.com/embed/5-GUmSWfMFM" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; ?autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe max-width="1vh" style="margin:0.1vh;  border-radius: 12px;"
+                        src="https://www.youtube.com/embed/Osd4DLpMNp4" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

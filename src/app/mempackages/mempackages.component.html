@@ -1,0 +1,124 @@
+<div
+  style="font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive; background-color: #c5c6c7; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;">
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    <button class="btn btn-info me-md-2" type="button" routerLink="/"
+      style="border:solid #1F2833; margin: 1vw;">Home
+    </button>
+    
+
+    <button class="btn btn-info me-md-2" type="button" routerLink="/profile"
+      style="border:solid #1F2833; margin: 1vw;">Profile
+    </button>
+    <button class="btn btn  me-md-2" style=" margin: 1vw; color: aqua; background-color:#1F2833 ;">
+      <h3>Package</h3>
+    </button>
+
+  </div>
+  <hr style="height: 2px; margin: 1%;padding: 0;">
+  <div class="row row-cols-1 row-cols-md-3 g-1">
+    <div class="col">
+      <div class="card shadow-lg" style="margin: 2vh;">
+        <img src="assets\packi\caliicon.svg" class="card-img-top" alt="..."
+          style="max-width: 20vh; align-self: center; padding-bottom: 1vh;">
+        <div class="card-body">
+          <div style="background-color: #1F2833; color: aqua; border-radius: 5px;">
+            <h4 class="card-title" style=" text-align: center;">{{pac.calisThen}}</h4><!-- Calisthenic-Card 1-->
+          </div>
+          <p class="card-text">{{pac.caliS}}</p>
+          <div style=" color: #1F2833; display: flex; justify-content: flex-end; border-radius: 5px;  ">
+            <h5 class="card-title bg-info" style=" text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;2000</h5>
+            </div>
+        </div>
+        <button type="button" class="btn btn-info"
+          (click)="pac.calisBuy()">BUY</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-lg" style="margin: 2vh;">
+        <img src="assets\packi\weighticon.svg" class="card-img-top" alt="..."
+          style="max-width: 20vh; padding-top: 1vh; align-self: center;">
+        <div class="card-body">
+          <div style="background-color: #1F2833; color: aqua; border-radius: 4px;">
+            <h4 class="card-title" style=" text-align: center;">{{pac.gyM}}</h4> <!--Weigthlifting-card 2-->
+          </div>
+          
+          <p class="card-text">{{pac.gymNa}}</p>
+          <div style=" color: #1F2833; display: flex; justify-content: flex-end; border-radius: 5px;  ">
+            <h5 class="card-title bg-info" style=" text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;2000</h5>
+            </div>
+        </div>
+        <button type="button" class="btn btn-info" 
+          (click)="pac.gymBuy()">BUY</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-lg" style="margin: 2vh;">
+        <img src="assets\packi\crossicon.svg" class="card-img-top" alt="..."
+          style="max-width: 20vh; align-self: center; padding-top: 3vh; padding-bottom: 1vh;">
+        <div class="card-body">
+          <div style="background-color: #1F2833; color: aqua; border-radius: 5px;">
+            <h4 class="card-title" style=" text-align: center;">{{pac.crossFi}}</h4>
+            <!--Cross Fitness --card3 -->
+          </div>
+          <p class="card-text">{{pac.crossFitness}}</p>
+          <div style=" color: #1F2833; display: flex; justify-content: flex-end; border-radius: 5px;  ">
+            <h5 class="card-title bg-info" style=" text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;2000</h5>
+            </div>
+        </div><button type="button" class="btn btn-info"
+          (click)="pac.crossBuy()">BUY</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-lg" style="margin: 2vh;">
+        <img src="assets\packi\boxingicon.svg" class="card-img-top" alt="..."
+          style="max-width: 20vh; align-self: center;">
+        <div class="card-body">
+          <div style="background-color: #1F2833; color: aqua; border-radius: 5px;">
+            <h4 class="card-title" style=" text-align: center;">{{pac.kickBo}}</h4>
+            <!--Kick boxing -- card4-->
+          </div>
+          <p class="card-text">{{pac.kickBoxing}}</p>
+          <div style=" color: #1F2833; display: flex; justify-content: flex-end; border-radius: 5px;  ">
+            <h5 class="card-title bg-info" style=" text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;2000</h5>
+            </div>
+        </div><button type="button" class="btn btn-info"
+          (click)="pac.kickBuy()">BUY</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-lg" style="margin: 2vh;">
+        <img src="assets\packi\cardioicon.svg" class="card-img-top" alt="..."
+          style="max-width: 20vh; align-self: center; padding-bottom:1.2vh;">
+        <div class="card-body">
+          <div style="background-color: #1F2833; color: aqua; border-radius: 5px;">
+            <h4 class="card-title" style=" text-align: center;">{{pac.card}}</h4><!-- Cardio -- card5-->
+          </div>
+          <p class="card-text">{{pac.cardiO}}</p>
+          <div style=" color: #1F2833; display: flex; justify-content: flex-end; border-radius: 5px;  ">
+            <h5 class="card-title bg-info" style=" text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;2000</h5>
+            </div>
+        </div><button type="button" class="btn btn-info"
+          (click)="pac.cardioBuy()">BUY</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card shadow-lg" style="margin: 2vh;">
+        <img src="assets\packi\spo.svg" class="card-img-top" alt="..." style="max-width: 20vh; align-self: center;">
+        <div class="card-body">
+          <div style="background-color: #1F2833; color: aqua; border-radius: 5px;">
+            <h4 class="card-title" style=" text-align: center;">{{pac.sporT}}</h4>
+            <!--sport--card5-->
+          </div>
+          <p class="card-text">
+            {{pac.sporTs}} </p>
+            <div style=" color: #1F2833; display: flex; justify-content: flex-end; border-radius: 5px;  ">
+              <h5 class="card-title bg-info" style=" text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;2000</h5>
+              </div>
+        </div><button type="button" class="btn btn-info"
+          (click)="pac.sportsBuy()">BUY</button>
+      </div>
+    </div>
+  </div>
+</div>

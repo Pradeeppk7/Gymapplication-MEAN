@@ -1,0 +1,36 @@
+
+<div class="container" style="min-height: 560px; font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive;">
+    
+    <div class="row justify-content-center" style="padding-top: 4%;">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                
+                <div class="card-header" style="background-color:  #c5c6c7;">
+                    <h2 style="text-align: center;">Login</h2>
+                    <div class="card-body" style="background-color:  #1F2833;"><p class="alert alert-danger" *ngIf="msg" style="align-self: center;">{{msg}}</p>
+                        <form #f="ngForm" (submit)="doLogin(f)">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="inputEmail" type="email" name="uemail"
+                                    placeholder="name@example.com" ngModel/>
+                                <label for="inputEmail">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="userpass" ngModel/>
+                                <label for="inputPassword">Password</label>
+                            </div>
+                            
+                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                <button type="submit" class="btn btn-info btn-block" name="upassword"  style="text-align: center;" >Login</button>
+                                <!-- routerLink="/profile"-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center py-3">
+                        <div class="small" ><a routerLink="/register" style="color:  #1F2833;">Need an account? Sign up!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

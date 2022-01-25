@@ -1,0 +1,53 @@
+<div style="  font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive;">
+    <nav class="navbar navbar-expand-lg navbar-light "
+        style="background-color: #1F2833;  border-top: 4px solid aqua;  z-index: 1;">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="">
+                <img src="assets\Frame 2.svg" alt="" width="40" height="30" style="margin-bottom: 35%;">
+            </a>
+            <a class="navbar-brand" routerLink="" style="color: aqua;">
+                <h1 style="font-family: 'Big Shoulders Stencil Display', cursive;">Hustle Fitness</h1>
+            </a>
+            <button class="navbar-toggler " type="button" style="color: #00ffff;" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation" style="background-color: aqua;">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 30%;">
+
+                <ul class="navbar-nav me-auto  mb-lg-0">
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <h3 style="color:#00ffff" *ngIf="userSer.isLoggedIn()">  Hustle up ! &nbsp; {{userSer.name}} </h3>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;">Home</button>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/packages" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;">Packages</button>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/register" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;" *ngIf="!userSer.isLoggedIn()">Register</button>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/login" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;" *ngIf="!userSer.isLoggedIn()">Login</button>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/profile" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;" *ngIf="userSer.isLoggedIn()">Profile</button>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/manager" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;" *ngIf="userSer.isAdmin()">manager</button>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1vh;">
+                        <button class="btn btn-outline-info" routerLink="/register" style="color: aqua; font-size: 100%; font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;" *ngIf="userSer.isLoggedIn()"
+                            (click)="doLogout()">logout</button>
+                    </li>
+                    
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>

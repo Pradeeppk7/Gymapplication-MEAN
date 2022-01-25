@@ -1,0 +1,26 @@
+<div class="container" style="font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive; background-color: #c5c6c7; max-height:200vh; padding-bottom: 20vh;">
+<div class="d-grid gap-2 d-md-flex justify-content-md-center">
+    
+    <button class="btn btn-info me-md-2" type="button" routerLink="/profile"
+        style="border:solid #1F2833; margin: 1vw;">Profile</button>
+
+    <button class="btn btn-info me-md-2" type="button" routerLink="/packages"
+        style="border:solid #1F2833; margin: 1vw;">Packages
+    </button>
+</div> <!-- nav bar-->
+<hr style="height: 2px; margin: 1%;padding: 0;">
+    <div class="card text-center shadow-lg" style="margin: 4vw;  background-color: #c5c6c7;">
+        <div class="card-header" >
+            {{packname}} has been purchased
+        </div>
+        <div class="card-body" style="background-color:whitesmoke;">
+            <h2 class="card-title text-success">Payment Successfull</h2>
+            <p class="card-text">Thanks for choosing  Hustle Fitness</p>
+            <a routerLink="/profile" class="btn btn-info">Lets Go  &raquo;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Hustle Fitness
+        </div>
+    </div>
+</div>

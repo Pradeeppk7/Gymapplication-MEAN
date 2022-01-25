@@ -1,0 +1,89 @@
+<div
+    style="background-color: whitesmoke; min-height:80vh; font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive; background-color: #c5c6c7; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;">
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4"><button class="btn btn  me-md-2" style=" margin: 1vw; color: aqua; background-color:#1F2833 ;">
+                <h3>Member Management</h3>
+            </button></div>
+
+            <div class="col-sm-4 " >
+                <div  style="color:#c5c6c7; margin-top: 10vh;">
+
+                    Serach: <input type="text" #search (keyup)="doSearch(search.value)"> &nbsp;
+
+                    <a routerLink="/adduser">
+                        <img src="assets\user-plus-solid.svg" height="30vw"
+                            style="padding:0.5vh; border-radius: 2px; background-color:green;">
+                    </a> 
+                </div>
+                <div *ngIf="msg"><p class="alert alert-success">{{msg}}</p></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col"></div>
+
+            <div class="col">
+                <table class="table table-striped shadow-lg container-fluid">
+                    <thead>
+                        <tr style="color: #1F2833;">
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">gender</th>
+                            <th scope="col">age</th>
+                            <th scope="col">package</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Steam bath</th>
+                            <th scope="col">Diet plan</th>
+                            <th scope="col">Personal Trainer</th>
+                            <th scope="col">Date of Purchase</th>
+                            <th scope="col">Paid</th>
+                            <th scope="col">Coupon</th>
+                            <th scope="col">Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; index as i;">
+
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{user.Fname}} {{user.lname}}</td>
+                            <td>{{user.uemail}}</td>
+                            <td>{{user.userphone}}</td>
+                            <td>{{user.gender}}</td>
+                            <td>{{user.userage}}</td>
+                            <td>{{user.pack}}</td>
+                            <td>{{user.level}}</td>
+                            <td>{{user.isbath}}</td>
+                            <td>{{user.isdietplan}}</td>
+                            <td>{{user.istrain}}</td>
+                            <td>{{user.date|slice :0:10}}</td>
+                            <td>{{user.paid}}</td>
+                            <td>{{user.coupon}}</td>
+                            <td style="display: flex; margin: 1vh; background-color:#c5c6c7">
+                                <img src="assets\edit-solid.svg" height="30vw" routerLink="/edituser/{{user._id}}"
+                                    style="padding:0.5vh; border-radius: 2px; background-color:yellow;">&nbsp;<img
+                                    src="assets\user-minus-solid.svg" height="30vw"
+                                    style="padding:0.5vh; border-radius: 2px; background-color:red;"
+                                    (click)="deleteUser(user._id)">
+
+                            </td>
+
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+                <p *ngIf="users.length==0"> No Records Found</p>
+            </div>
+
+            <div class="col"></div>
+        </div>
+    </div>
+</div>

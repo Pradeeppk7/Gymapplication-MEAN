@@ -1,0 +1,162 @@
+<div  style="font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive; background-color: #c5c6c7; max-height:200vh; ">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button class="btn btn  me-md-2" style=" margin: 1vw; color: aqua; background-color:#1F2833 ;">
+            <h3>CART</h3>
+        </button>
+        <button class="btn btn-info me-md-2" type="button" routerLink="/profile"
+            style="border:solid #1F2833; margin: 1vw;">Profile</button>
+
+        <button class="btn btn-info me-md-2" type="button" routerLink="/packages"
+            style="border:solid #1F2833; margin: 1vw;">Back
+        </button>
+    </div> <!-- nav bar-->
+    <!-- Cart-->
+    <hr style="height: 2px; margin: 1%;padding: 0;">
+
+
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg" style=" border-radius: 12px;">
+                {{msg}}
+                <div class="card-header" style="background-color: #c5c6c7; border-radius: 12px;">
+                    <h2 style="text-align: center; font-family: 'Big Shoulders Stencil Display', cursive;
+                                                    font-family: 'Londrina Solid', cursive;">Check Out</h2>
+                    <div class="card-body" style="background-color:  whitesmoke;  border-radius:12px ;">
+                        <div *ngIf="isPackbuy">
+                            <h3 class="bg-info"
+                                style="display: flex; justify-content: center; border-radius: 12px; padding:4px;">
+                                {{packname}}</h3>
+                        </div>
+                        <h5> {{packdesc}} </h5>
+                        <form (submit)="packCb(fo)" #fo="ngForm" *ngIf="userdata">
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">
+                                        <h5 class="bg-info"
+                                            style="display: flex; justify-content: center; border-radius: 12px; padding:4px;">
+                                            Level</h5>
+                                    </legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="level" #level="ngModel"
+                                                id="gridRadios1" value="Beginner" checked ngModel required>
+                                            <label class="form-check-label" for="level">
+                                                Beginner
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="level" #level="ngModel"
+                                                id="gridRadios2" value="Intermediate" ngModel>
+                                            <label class="form-check-label" for="level">
+                                                Intermediate
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="level" #level="ngModel"
+                                                id="gridRadios3" value="Advanced" ngModel>
+                                            <label class="form-check-label" for="level">
+                                                Advanced
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr style="margin: 1%; height: 2px;">
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">
+                                        <h5 class="bg-info"
+                                            style="display: flex; justify-content: center; border-radius: 12px; padding:4px;">
+                                            Add ons</h5>
+                                    </legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="DietPlan"
+                                                name="isdietplan" ngModel #addson1 (change)="diet($event)" ngModel>
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Diet Plan (&#8377; 500)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="PersonalTrainer"
+                                                name="istrain" (change)="train($event)" ngModel>
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                Personal Trainer (&#8377; 2000)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Steambath"
+                                                name="isbath" (change)="bath($event)" ngModel>
+                                            <label class="form-check-label" for="defaultCheck2">
+                                                steambath (&#8377; 1000)
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <hr style="margin: 1%; height: 2px;">
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">
+                                        <h5 class="bg-info"
+                                            style="display: flex; justify-content: center; border-radius: 12px; padding:4px;">
+                                            Payment</h5>
+                                    </legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="payment" id="gridRadios1"
+                                                value="Gpay" required ngModel #payment="ngModel" [(ngModel)]="val" >
+                                            <label class="form-check-label" for="gridRadios1">
+                                                Gpay
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="payment" id="gridRadios2"
+                                                value="Upi" ngModel #payment="ngModel" ngModel="val" >
+                                            <label class="form-check-label" for="gridRadios2">
+                                                Upi
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="payment" id="gridRadios3"
+                                                value="Network Banking" ngModel #payment="ngModel" [(ngModel)]="val" >
+                                            <label class="form-check-label" for="gridRadios3">
+                                                Network Banking
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" name="coupon" placeholder="Coupan Code"
+                                        [(ngModel)]="couponcode">
+                                </div>
+                                <div class="col">
+                                    <input type="button" class="btn btn-info" Value="Apply" (click)="coupon($event)">
+                                    <p style="color: red; display: inline-block; margin-left: 1vw;">{{codemsg}} {{offer}}</p><p style="color: green; display: inline-block; margin-left: 1vw;">{{appliedmsg}} </p>
+                                </div>
+                            </div>                        
+                            <div style="margin-top: 1vh; display:flex; justify-content: flex-end;">
+                                <h3 style="margin:1vh"> <span class="text-info">Adds ons + package &nbsp; </span> Total:{{pay}} </h3>
+                                <button type="submit" class="btn btn-info btn-lg" value="Buy"
+                                    [disabled]="fo.invalid">Buy</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                    <div class="card-footer text-center py-3">
+                        <p class="card-text"><small class="text-muted">Hustle Fitness</small></p>
+                        <div class="small"><a routerLink="/contact" style="color:  #1F2833;">Need Help?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
